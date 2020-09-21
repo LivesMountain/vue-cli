@@ -25,3 +25,4 @@ const app=new vue({
         app:cpn
     }
 })
+document.writeln('<h2>牛逼66666666666666666666666666 </h2>')
