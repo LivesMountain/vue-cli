@@ -7,7 +7,13 @@
 
 <script>
 export default {
-
+    name:'profile',
+    created(){
+        console.log('created');
+    },
+    destroyed(){
+        console.log('destroyed');
+    }
 }
 </script>
 

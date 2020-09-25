@@ -4,7 +4,10 @@
     <router-link to="/about" replace>关于</router-link>
     <router-link :to="/user/+userid" replace>user</router-link>
     <router-link :to="{path:'/profile',query:{name:'li',age:'18',heigin:1.88}}">档案</router-link>
-    <router-view></router-view>
+    <keep-alive exclude='profile'>
+      <router-view/>
+    </keep-alive>
+    <!-- <router-view></router-view> -->
     <!-- <button @click='click1'>home</button>
     <button @click='click2'>about</button> -->
     <button @click="userclick">用户</button>
@@ -17,7 +20,8 @@ export default {
   name: 'App',
   data(){
     return {
-      userid:"liming"
+      userid:"liming",
+      path:""
     }
   },
   methods:{
@@ -40,6 +44,19 @@ export default {
         }
       })
     }
+  },
+  // 下面这两个方法只有开启了keepalive插件才能被执行，一个是出于活跃的页面，并且keepalive保持组建不会被销毁
+  activated(){
+    this.$router.push(this.path)
+    console.log('active');
+  },
+  deactivated(){
+    console.log('deactived');
+  },
+  beforeRouteLeave(to,from,next){
+    console.log(this.$router.path);
+    this.path=this.$router.path
+    next()
   }
   // componetes:{
 

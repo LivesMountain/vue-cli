@@ -22,6 +22,9 @@ const routes=[
   {
     path:'/home',
     component:home,
+    meta:{
+      name:'home'
+    },
     children:[
       {
         path:'',
@@ -40,15 +43,24 @@ const routes=[
   },
   {
     path:'/about',
-    component:about
+    component:about,
+    meta:{
+      name:'about'
+    },
   },
   {
     path:'/user/:abc',
-    component:user
+    component:user,
+    meta:{
+      name:'user'
+    },
   },
   {
     path:'/profile',
-    component:profile
+    component:profile,
+    meta:{
+      name:'profile'
+    },
   }
   // {
   //   path: '/',
@@ -64,5 +76,14 @@ const routes=[
 const router =new Router({
   routes,
   mode:'history'
+})
+router.beforeEach((to,from,next) => {
+  console.log(to);
+  document.title=to.matched[0].meta.name
+  console.log(to);
+  next()
+})
+router.afterEach(()=>{
+  console.log('111111111111');
 })
 export default router
