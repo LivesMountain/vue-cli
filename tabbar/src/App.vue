@@ -1,31 +1,20 @@
 <template>
   <div id="app">
-    <div id="tab-bar">
-      <div class="tab-bar-item">首页</div>
-      <div class="tab-bar-item">分类</div>
-      <div class="tab-bar-item">购物车</div>
-      <div class="tab-bar-item">我的</div>
-    </div>
+    <router-view></router-view>
+    <maintabbar/>
   </div>
 </template>
 
 <script>
+import maintabbar from './components/maintabbar'
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+    maintabbar
+  }
 }
 </script>
     
 <style>
-  @import "./assets/css/base.css";
-  
-
-  #tab-bar {
-    display: flex;
-  }
-
-  .tab-bar-item {
-    flex: 1;
-    text-align: center;
-    height: 49px;
-  }
+  @import './assets/css/base';
 </style>
