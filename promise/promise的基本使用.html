@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // setTimeout(() => {
+        //     console.log('hello');
+        // },1000)
+        // setTimeout(function(){
+        //     console.log('function');
+        // },1000)
+        // resolve 和reject 本身也是函数
+
+
+        // new Promise((resolve,reject) => {
+        //     setTimeout(() => {
+        //         resolve()
+        //     },5000)
+        // }).then(() => {
+        //     console.log('hello');
+        //     return new Promise((resolve,reject) => {
+        //         setTimeout(() => {
+        //             resolve()
+        //         },5000)
+        //     }).then(() => {
+        //         console.log('function');
+        //         return new Promise((resolve,reject) => {
+        //             setTimeout(() => {
+        //                 resolve()
+        //             },5000)
+        //         }).then(()=>{
+        //             console.log('我是最后一次');
+        //         })
+        //     })
+        // })
+
+
+
+
+
+
+
+
+        new Promise((resolve,reject) => {
+            setTimeout(() => {
+                // resolve()
+                reject('error message')
+            },5000)
+        }).then(() => {
+            console.log('hello');
+            return new Promise((resolve,reject) => {
+                setTimeout(() => {
+                    resolve()
+                },5000)
+            }).then(() => {
+                console.log('function');
+                return new Promise((resolve,reject) => {
+                    setTimeout(() => {
+                        resolve()
+                    },5000)
+                }).then(()=>{
+                    console.log('我是最后一次');
+                })
+            })
+        }).catch(err => {
+            console.log(err);
+        })
+    </script>
+</body>
+</html>
