@@ -3,11 +3,11 @@
     <tabbaritem path='/home' activecolor='deepPink'>
       <template v-slot:item-icon>
         <!-- <img slot='item-icon' src="./assets/img/tabbar/home.png" alt=""> -->
-        <img src="../assets/img/tabbar/home.png" alt="">
+        <img src="~assets/img/tabbar/home.png" alt="">
       </template>
       <template v-slot:item-icon-active>
         <!-- <img slot='item-icon' src="./assets/img/tabbar/home.png" alt=""> -->
-        <img src="../assets/img/tabbar/home_active.png" alt="">
+        <img src="~assets/img/tabbar/home_active.png" alt="">
       </template>
       <template v-slot:item-text>
         <!-- <div slot="item-text">首页</div> -->
@@ -17,11 +17,11 @@
     <tabbaritem path='/category' activecolor='red'>
       <template v-slot:item-icon>
         <!-- <img slot='item-icon' src="./assets/img/tabbar/home.png" alt=""> -->
-        <img src="../assets/img/tabbar/categories.png" alt="">
+        <img src="~assets/img/tabbar/categories.png" alt="">
       </template>
       <template v-slot:item-icon-active>
         <!-- <img slot='item-icon' src="./assets/img/tabbar/home.png" alt=""> -->
-        <img src="../assets/img/tabbar/categories_active.png" alt="">
+        <img src="~assets/img/tabbar/categories_active.png" alt="">
       </template>
       <template v-slot:item-text>
         <!-- <div slot="item-text">首页</div> -->
