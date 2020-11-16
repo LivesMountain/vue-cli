@@ -130,12 +130,29 @@
         //     }).catch(res=>{
         //         console.log(res);
         //     })
+        let isResult1 =false
+        let isResult2=false
     $ajax({
         url='',
         success: function (){
             console.log('jieguoyi ');
+            isResult1=true
+            handleResult()
         }
     })
+    $ajax({
+        url='',
+        success: function (){
+            console.log('jieguoer ');
+            isResult2=true
+            handleResult()
+        }
+    })
+    function handleResult(){
+        if (isResult1 && isResult2) {
+            
+        }
+    }
 </script>
 </body>
 </html>
