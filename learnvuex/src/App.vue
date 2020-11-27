@@ -32,6 +32,17 @@
     <button @click="updateinfo">updatename</button>
     <h2>{{$store.state.info}}</h2>
     <!-- <router-view/> -->
+
+
+    <!-- module拆分vuex -->
+    <button @click="updateName">module</button>
+    {{$store.state.a.name}}
+    <h2>{{$store.getters.fullname}}</h2>
+    <h2>{{$store.getters.fullname1}}</h2>
+    <h2>{{$store.getters.fullname2}}</h2>
+
+
+    <button @click='aactionname'>222</button>
   </div>
 </template>
 
@@ -71,10 +82,21 @@ export default {
       this.$store.commit('addstudent',stu)
     },
     updateinfo(){
-      this.$store.dispatch('aupdateinfo',{
-        message:"我是payload",
-        success:() => console.log('我已经完成了')
-      })
+      // this.$store.dispatch('aupdateinfo',{
+      //   message:"我是payload",
+      //   success:() => console.log('我已经完成了')
+      // })
+      this.$store.dispatch('aupdateinfo',{message:"我是payload",success:() => console.log('我已经完成了')})
+        .then(res => {
+          console.log('完成提交了');
+          console.log(res);
+        })
+    },
+    updateName(){
+      this.$store.commit('updateName','list')
+    },
+    aactionname(){
+      this.$store.dispatch('aUpdataname')
     }
   },
   computted:{
